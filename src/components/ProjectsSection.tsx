@@ -46,7 +46,7 @@ const featuredProjects = [
     ],
     tools: ["Power BI", "Excel"],
     image: supermarket1,
-    videoLink: "/files/hr_analytics_video.mp4",
+    videoLink: "/files/supermarket_sales_video.mp4",
     embedVideo: true,
     powerBILink: "https://app.powerbi.com/groups/me/reports/4f7d0f58-4800-4238-beb3-52673e4138aa/b432522a9bf389c5cc2b?experience=power-bi",
   },
