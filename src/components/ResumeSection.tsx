@@ -64,8 +64,6 @@ const ResumeSection = () => {
               <div className="flex items-center gap-3">
                 <a
                   href={resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   download
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
                 >
