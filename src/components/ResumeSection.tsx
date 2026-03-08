@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const ResumeSection = () => {
   const [showViewer, setShowViewer] = useState(false);
+  const resumeUrl = "/files/resume.pdf";
 
   return (
     <>
