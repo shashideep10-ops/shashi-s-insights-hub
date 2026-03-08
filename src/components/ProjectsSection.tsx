@@ -32,7 +32,7 @@ const featuredProjects = [
     ],
     tools: ["Python", "Pandas", "Matplotlib", "Seaborn"],
     image: churnAnalysis,
-    pdfLink: "/files/code_graphs_python_callchurn.pdf",
+    pdfLink: "https://drive.google.com/file/d/1g29VzBxtgrbYq4A3cfLEIsBS4lNdomSr/view?usp=sharing",
     colabLink: "https://colab.research.google.com/drive/1d5Oy2DXhd2GFP2E9sqttTCpCKnfEkWQm?usp=sharing",
   },
   {
