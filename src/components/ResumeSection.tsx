@@ -65,7 +65,7 @@ const ResumeSection = () => {
               <h3 className="text-lg font-semibold text-foreground">Resume</h3>
               <div className="flex items-center gap-3">
                 <a
-                  href="/files/resume.pdf"
+                  href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   download
