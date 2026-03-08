@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import { Download, Eye, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import "react-pdf/dist/esm/Page/TextLayer.css";
 import resumePdf from "@/assets/resume.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
