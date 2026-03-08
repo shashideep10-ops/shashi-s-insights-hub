@@ -41,7 +41,7 @@ const ResumeSection = () => {
               <Eye className="w-5 h-5" /> View Resume
             </button>
             <a
-              href="/files/resume.pdf"
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               download
