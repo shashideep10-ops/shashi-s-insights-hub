@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { Download, Eye, X } from "lucide-react";
 import { useState } from "react";
+import resumePdf from "@/assets/resume.pdf";
 
 const ResumeSection = () => {
   const [showViewer, setShowViewer] = useState(false);
-  const resumeUrl = "/files/resume.pdf";
+  const resumeUrl = resumePdf;
 
   return (
     <>
