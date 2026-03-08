@@ -109,6 +109,7 @@ const ResumeSection = () => {
                   Open in new tab if preview doesn't load
                 </a>
               </div>
+            </div>
           </motion.div>
         </div>
       )}
