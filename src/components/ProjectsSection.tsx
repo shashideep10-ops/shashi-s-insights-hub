@@ -17,6 +17,8 @@ const featuredProjects = [
     ],
     tools: ["Power BI"],
     image: hrDashboard,
+    videoLink: "/files/hr_analytics_video_2.mp4",
+    embedVideo: true,
     powerBILink: "https://app.powerbi.com/groups/me/reports/efd90892-f3cf-49bc-ae62-107c2fd2aa78/a34efe5069548ed44848?experience=power-bi",
   },
   {
