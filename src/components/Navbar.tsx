@@ -7,6 +7,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Resume", href: "#resume" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -28,6 +29,8 @@ const Navbar = () => {
           ))}
           <a
             href="/files/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             download
             className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
           >
@@ -53,6 +56,8 @@ const Navbar = () => {
           ))}
           <a
             href="/files/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             download
             className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-primary text-primary-foreground"
           >

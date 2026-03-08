@@ -54,6 +54,8 @@ const HeroSection = () => (
         </a>
         <a
           href="/files/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           download
           className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors"
         >
