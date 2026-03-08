@@ -99,7 +99,16 @@ const ResumeSection = () => {
                   </a>
                 </div>
               </object>
-            </div>
+              <div className="flex items-center justify-end">
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  Open in new tab if preview doesn't load
+                </a>
+              </div>
           </motion.div>
         </div>
       )}
