@@ -78,12 +78,27 @@ const ResumeSection = () => {
                 </button>
               </div>
             </div>
-            <div className="flex-1 p-2">
-              <iframe
-                src="/files/resume.pdf"
-                className="w-full h-full rounded-lg"
-                title="Resume"
-              />
+            <div className="flex-1 p-2 space-y-3">
+              <object
+                data={`${resumeUrl}#view=FitH`}
+                type="application/pdf"
+                className="w-full h-full min-h-[65vh] rounded-lg bg-muted"
+                aria-label="Resume PDF preview"
+              >
+                <div className="h-full min-h-[65vh] rounded-lg border border-border bg-muted/40 flex flex-col items-center justify-center gap-3 px-6 text-center">
+                  <p className="text-sm text-muted-foreground">
+                    Preview is blocked by your browser. Open the resume in a new tab.
+                  </p>
+                  <a
+                    href={resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors"
+                  >
+                    <Eye className="w-4 h-4" /> Open Resume
+                  </a>
+                </div>
+              </object>
             </div>
           </motion.div>
         </div>
