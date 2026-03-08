@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const ResumeSection = () => {
   const [showViewer, setShowViewer] = useState(false);
+  const resumeUrl = "/files/resume.pdf";
 
   return (
     <>
@@ -40,9 +41,7 @@ const ResumeSection = () => {
               <Eye className="w-5 h-5" /> View Resume
             </button>
             <a
-              href="/files/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={resumeUrl}
               download
               className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors text-lg"
             >
@@ -64,9 +63,7 @@ const ResumeSection = () => {
               <h3 className="text-lg font-semibold text-foreground">Resume</h3>
               <div className="flex items-center gap-3">
                 <a
-                  href="/files/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={resumeUrl}
                   download
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
                 >
@@ -77,12 +74,37 @@ const ResumeSection = () => {
                 </button>
               </div>
             </div>
-            <div className="flex-1 p-2">
-              <iframe
-                src="/files/resume.pdf"
-                className="w-full h-full rounded-lg"
-                title="Resume"
-              />
+            <div className="flex-1 p-2 space-y-3">
+              <object
+                data={`${resumeUrl}#view=FitH`}
+                type="application/pdf"
+                className="w-full h-full min-h-[65vh] rounded-lg bg-muted"
+                aria-label="Resume PDF preview"
+              >
+                <div className="h-full min-h-[65vh] rounded-lg border border-border bg-muted/40 flex flex-col items-center justify-center gap-3 px-6 text-center">
+                  <p className="text-sm text-muted-foreground">
+                    Preview is blocked by your browser. Open the resume in a new tab.
+                  </p>
+                  <a
+                    href={resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors"
+                  >
+                    <Eye className="w-4 h-4" /> Open Resume
+                  </a>
+                </div>
+              </object>
+              <div className="flex items-center justify-end">
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  Open in new tab if preview doesn't load
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
