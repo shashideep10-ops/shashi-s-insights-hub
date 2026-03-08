@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ExternalLink, FileText, Play, X } from "lucide-react";
+import { ExternalLink, FileText, Play, X, BarChart3, BookOpen } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -11,10 +11,13 @@ interface ProjectCardProps {
   image: string;
   pdfLink?: string;
   videoLink?: string;
+  embedVideo?: boolean;
+  powerBILink?: string;
+  colabLink?: string;
   featured?: boolean;
 }
 
-const ProjectCard = ({ title, problem, analysis, insights, tools, image, pdfLink, videoLink, featured }: ProjectCardProps) => {
+const ProjectCard = ({ title, problem, analysis, insights, tools, image, pdfLink, videoLink, embedVideo, powerBILink, colabLink, featured }: ProjectCardProps) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -24,7 +27,7 @@ const ProjectCard = ({ title, problem, analysis, insights, tools, image, pdfLink
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`glass-card overflow-hidden group cursor-pointer ${featured ? "" : ""}`}
+        className={`glass-card overflow-hidden group cursor-pointer`}
         onClick={() => setShowModal(true)}
       >
         <div className="relative overflow-hidden aspect-video">
@@ -100,16 +103,38 @@ const ProjectCard = ({ title, problem, analysis, insights, tools, image, pdfLink
                 </div>
               </div>
 
-              {(pdfLink || videoLink) && (
+              {embedVideo && videoLink && (
+                <div>
+                  <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Demo Video</h4>
+                  <video
+                    src={videoLink}
+                    controls
+                    className="w-full rounded-lg border border-border"
+                    preload="metadata"
+                  />
+                </div>
+              )}
+
+              {(pdfLink || powerBILink || colabLink || (videoLink && !embedVideo)) && (
                 <div className="flex flex-wrap gap-3 pt-2">
-                  {pdfLink && (
-                    <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-muted transition-colors">
-                      <FileText className="w-4 h-4" /> View PDF
+                  {powerBILink && (
+                    <a href={powerBILink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity">
+                      <BarChart3 className="w-4 h-4" /> View Power BI Dashboard
                     </a>
                   )}
-                  {videoLink && (
-                    <a href={videoLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-muted transition-colors">
-                      <Play className="w-4 h-4" /> Watch Video
+                  {colabLink && (
+                    <a href={colabLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity">
+                      <BookOpen className="w-4 h-4" /> View Google Colab Notebook
+                    </a>
+                  )}
+                  {pdfLink && (
+                    <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-muted transition-colors">
+                      <FileText className="w-4 h-4" /> View Report
+                    </a>
+                  )}
+                  {videoLink && !embedVideo && (
+                    <a href={videoLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-muted transition-colors">
+                      <Play className="w-4 h-4" /> Watch Demo
                     </a>
                   )}
                 </div>

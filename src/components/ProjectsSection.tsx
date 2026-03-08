@@ -17,8 +17,7 @@ const featuredProjects = [
     ],
     tools: ["Power BI"],
     image: hrDashboard,
-    pdfLink: "/files/hr_analytics_dashboard.pdf",
-    videoLink: "/files/hr_analytics_video.mp4",
+    powerBILink: "https://app.powerbi.com/groups/me/reports/efd90892-f3cf-49bc-ae62-107c2fd2aa78/a34efe5069548ed44848?experience=power-bi",
   },
   {
     title: "Customer Churn Analysis",
@@ -32,6 +31,7 @@ const featuredProjects = [
     tools: ["Python", "Pandas", "Matplotlib", "Seaborn"],
     image: churnAnalysis,
     pdfLink: "/files/code_graphs_python_callchurn.pdf",
+    colabLink: "https://colab.research.google.com/drive/1d5Oy2DXhd2GFP2E9sqttTCpCKnfEkWQm?usp=sharing",
   },
   {
     title: "Super Market Sales Dashboard",
@@ -44,6 +44,9 @@ const featuredProjects = [
     ],
     tools: ["Power BI", "Excel"],
     image: supermarket1,
+    videoLink: "/files/hr_analytics_video.mp4",
+    embedVideo: true,
+    powerBILink: "https://app.powerbi.com/groups/me/reports/4f7d0f58-4800-4238-beb3-52673e4138aa/b432522a9bf389c5cc2b?experience=power-bi",
   },
 ];
 
