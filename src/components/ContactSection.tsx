@@ -7,8 +7,9 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const mailto = `mailto:shashideep10@gmail.com?subject=Portfolio Contact from ${form.name}&body=${encodeURIComponent(form.message)}%0A%0AFrom: ${form.name} (${form.email})`;
-    window.open(mailto);
+    const phone = "917036544500";
+    const text = `Hi, I'm ${form.name} (${form.email}).%0A%0A${encodeURIComponent(form.message)}`;
+    window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
   };
 
   return (
