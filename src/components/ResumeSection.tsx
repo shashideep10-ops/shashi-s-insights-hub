@@ -41,6 +41,8 @@ const ResumeSection = () => {
             </button>
             <a
               href="/files/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               download
               className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors text-lg"
             >
