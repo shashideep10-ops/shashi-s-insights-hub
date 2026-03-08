@@ -64,7 +64,7 @@ const additionalProjects = [
     ],
     tools: ["SQL", "MySQL"],
     image: pizzaSales,
-    pdfLink: "/files/SQL_pizza_project.pdf",
+    pdfLink: "https://drive.google.com/file/d/1y5RRqbh2SIiZLl9w8klv1EOZOnCBelFy/view?usp=sharing",
   },
 ];
 
