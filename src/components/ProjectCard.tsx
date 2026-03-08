@@ -20,6 +20,12 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, problem, analysis, insights, tools, image, pdfLink, videoLink, embedVideo, powerBILink, colabLink, featured }: ProjectCardProps) => {
   const [showModal, setShowModal] = useState(false);
 
+  const getPdfViewerLink = (link: string) => {
+    if (typeof window === "undefined") return link;
+    const absolutePdfUrl = new URL(link, window.location.origin).toString();
+    return `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(absolutePdfUrl)}`;
+  };
+
   return (
     <>
       <motion.div
@@ -128,7 +134,7 @@ const ProjectCard = ({ title, problem, analysis, insights, tools, image, pdfLink
                     </a>
                   )}
                   {pdfLink && (
-                    <a href={pdfLink} rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-muted transition-colors">
+                    <a href={getPdfViewerLink(pdfLink)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-muted transition-colors">
                       <FileText className="w-4 h-4" /> View Report
                     </a>
                   )}
