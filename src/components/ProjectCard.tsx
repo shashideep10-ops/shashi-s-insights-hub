@@ -20,12 +20,6 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, problem, analysis, insights, tools, image, pdfLink, videoLink, embedVideo, powerBILink, colabLink, featured }: ProjectCardProps) => {
   const [showModal, setShowModal] = useState(false);
 
-  const getPdfViewerLink = (link: string) => {
-    if (typeof window === "undefined") return link;
-    const absolutePdfUrl = new URL(link, window.location.origin).toString();
-    return `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(absolutePdfUrl)}`;
-  };
-
   return (
     <>
       <motion.div
